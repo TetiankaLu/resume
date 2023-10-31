@@ -1,0 +1,120 @@
+<div>
+    <main>
+        <section>
+            <h1>{{name}}</h1>
+            <p>{{birthdate}}</p>
+            <em>{{birthplace}}</em>
+            <p>{{deathdate}}</p>
+            <em>{{deathplace}}</em>
+            <p>({{nationality}})</p>
+            <h2>{{occupation}}</h2>
+            <p>{{known_for}}</p>
+        </section>
+        <div>
+           <h3>Education</h3>
+           <ul>
+           {{#each education}}
+            <li>{{degree}}</li>
+            <li>{{field}}</li>
+            <li>{{institution}}</li>
+            <li>{{year}}</li>
+           {{/each}}
+           </ul>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <strong>Notable publications</strong>
+            <ul>
+                 {{#each notable_publications}}
+                  <li>{{title}}</li>
+                  <h>{{year}}</h>
+                  <h>({{publisher}})</h>
+                 {{/each}}
+            </ul>     
+        </div>
+        <br>
+        <hr>
+        <div>
+            <section>
+                <strong>Partners:</strong>
+                <br>
+                {{#each partners}}
+                <br>
+                 <h>{{name}} : {{relationship}}</h>
+                 <br>
+                 <em>{{years}}</em>
+                 <br>
+                {{/each}}
+            </section>
+        </div>
+        <hr>
+        <br>
+        <div>
+            <strong>Awards:</strong>
+            {{#each awards}}
+            <p>{{title}}</p>
+            <em>({{year}})</em>
+            <h>{{description}}</h>
+            {{/each}}
+        </div>
+        <br>
+        <hr>
+        <br>
+        <style>
+            table, th, tr, td {
+                border: 1px solid black;
+            }
+        </style>
+        <body>
+            <table>
+             <thead>
+                <tr>
+                    <th>Influences</th>
+                    <th>Influenced</th>
+                    <th>Quotes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{influences}}</td>
+                    <td>{{influenced}}</td>
+                    <td>{{quotes}}</td>
+                </tr>
+            </table>
+            </tbody>
+        </body>
+        <br>
+        <hr>
+        <br>
+        <strong>Major discoveries</strong>
+        <br>
+        <p>{{#each major_discoveries}}
+            <ol>
+                {{title}}
+                {{year}}
+                {{description}}
+            </ol>
+            {{/each}}
+        </p>
+
+        <br>
+        <strong>Contributions</strong>
+        <br>
+        <p>{{#with contributions}}
+            <ol>
+                {{title}}
+                {{description}}
+                {{year}}
+                {{field}}
+            </ol>
+            {{/with}}
+        </p>
+
+
+
+
+    </main>
+</div>
