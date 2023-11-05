@@ -1,0 +1,85 @@
+<div>
+    <main>
+        <h1>{{name}}</h1>
+        <br>
+        <strong>{{description}}</strong>
+        <p>{{#with history}}
+        <h>{{year}}, {{founder}}</h>
+           {{/with}} 
+        </p>
+        <section>
+            {{#with types}}
+            <span class="badge text-bg-info">Number</span>
+            <span class="badge text-bg-info">String</span>
+            <span class="badge text-bg-info">Boolean</span>
+            <span class="badge text-bg-info">Null</span>
+            <span class="badge text-bg-info">Undefined</span>
+            <span class="badge text-bg-info">Symbol</span>
+            <span class="badge text-bg-info">Object</span>
+            {{/with}}
+        </section>
+        <section>
+            <p>Syntax</p>
+            <ul>
+            {{#with syntax}}
+                <li>{{variables}}</li>
+                <li>{{functions}}</li>
+                <li>{{conditionals}}</li>
+                <li>{{loops}}</li>
+                <li>{{classes}}</li>
+
+            {{/with}}
+            </ul>
+        </section>
+        <section>
+           <p>Features</p>
+           <ul class="list-group">
+           <li class="list-group-item">First-class functions</li>
+           <li class="list-group-item">Closures</li>
+           <li class="list-group-item">Dynamic typing</li>
+           <li class="list-group-item">Prototype-based inheritance</li>
+           <li class="list-group-item">Asynchronous programming with Promises and async/await</li>
+           <li class="list-group-item">Modules with import/export statements</li>
+           </ul>
+        </section>
+        <section>
+            <p>Libraries</p>
+            {{#with libraries}}
+            <span class="badge text-bg-info">jQuery</span>
+            <span class="badge text-bg-info">React</span>
+            <span class="badge text-bg-info">Angular</span>
+            <span class="badge text-bg-info">Vue</span>
+            <span class="badge text-bg-info">Node.js</span>
+            <span class="badge text-bg-info">Express.js</span>
+            <span class="badge text-bg-info">Lodash</span>
+            <span class="badge text-bg-info">Moment.js</span>
+            {{/with}}
+        </section>
+        <section>
+            {{#with tools}}
+            <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tools
+             </button>
+             <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Babel</a></li>
+             <li><a class="dropdown-item" href="#">Webpack</a></li>
+             <li><a class="dropdown-item" href="#">ESLint</a></li>
+             <li><a class="dropdown-item" href="#">Jest</a></li>
+             <li><a class="dropdown-item" href="#">Mocha</a></li>
+             <li><a class="dropdown-item" href="#">Chai</a></li>
+             <li><a class="dropdown-item" href="#">Selenium</a></li>
+             <li><a class="dropdown-item" href="#"Cypress</a></li>
+
+
+             </ul>
+            </div>
+            {{/with}}
+        </section>
+        <p>Community:</p>
+        {{#each community}}
+         <ol>{{name}} / {{type}}</ol>
+        {{/each}}
+
+    </main>
+</div>
