@@ -1,0 +1,117 @@
+<div>
+ <main>
+  <h1>{{name}}</h1>
+  <h2>{{description}}</h2>
+  <p>Price: {{price}}</p>
+  <p>{{category}}</p>
+  <strong>FEATURES:</strong>
+  {{#with features}}
+  <br>
+  <br>
+
+  <table class="table">
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">Processor</th>
+      {{#with processor}}
+      <td>{{brand}} / {{model}} / {{speed}} / {{cores}} / {{cache}}</td>
+      {{/with}}
+    </tr>
+    <tr>
+      <th scope="row">Memory</th>
+      {{#with memory1}}
+      <td>{{type}} / {{size}} / {{speed}}</td>
+      {{/with}}
+    </tr>
+    <tr>
+      <th scope="row">Memory</th>
+      {{#with memory2}}
+      <td>{{type}} / {{size}}</td> 
+      {{/with}}
+    </tr>
+        <tr>
+      <th scope="row">Display</th>
+      {{#with display}}
+      <td>{{size}} / {{resolution}} / {{technology}} / {{color_space}} / {{brightness}} / {{refresh_rate}}</td>
+      {{/with}}
+    </tr>
+    <tr>
+      <th scope="row">Graphics</th>
+      {{#with graphics}}
+      <td>{{brand}} / {{model}} / {{memory}}</td> 
+      {{/with}}
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<p><strong>Ports:</strong></p>
+{{#each ports}}
+ <ul>
+  <li>{{type}}</li>
+  <li>{{count}}</li>
+  <ol>{{features}}</ol>
+ </ul>
+{{/each}}
+
+<style>
+            table, th, tr, td {
+                border: 1px solid black;
+            }
+        </style>
+
+<table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">1</th>
+      <th scope="col">2</th>
+      <th scope="col">3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Battery</th>
+      {{#with battery}}
+      <td>type: {{type}}</td>
+      <td>capacity: {{capacity}}</td>
+      <td>life: {{life}}</td>
+      {{/with}}
+    </tr>
+    <tr>
+      <th scope="row">Weight</th>
+      <td>{{weight}}</td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+    <tr>
+      <th scope="row">Dimensions</th>
+      {{#with dimensions}}
+      <td>height: {{height}}</td>
+      <td>width: {{width}}</td>
+      <td>depth: {{depth}}</td>
+      {{/with}}
+    </tr>
+        <tr>
+      <th scope="row">Operating_system</th>
+      <td>{{operating_system}}</td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<h3>Accessories</h3>
+ {{#each accessories}}
+ <ol>
+  <em>{{name}}</em>
+  <h>({{price}})</h>
+  </ol>
+ {{/each}}
+
+{{/with}}
+ </main>
+</div>
