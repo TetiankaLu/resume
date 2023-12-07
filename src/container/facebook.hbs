@@ -1,0 +1,50 @@
+<div>
+  <main>
+    <h1>Facebook</h1>
+    <h2>Users</h2>
+    {{#each users}}
+     <ul>
+      <li>({{id}}) {{name}}, {{gender}}, {{age}}, 
+        <p><strong>friends:</strong></p>
+        <ul>{{#each friends}}
+          <ol>({{id}}) {{name}}, {{gender}}, {{age}},
+
+                 <ul>
+      {{#each groups}}
+      <p><strong>Groups</strong></p>
+      <li>({{id}}) {{name}}</li>
+      <li>{{description}}</li>
+      <li>{{#each members}}
+        <ol>({{id}}), {{name}}, {{gender}}, {{age}},</ol>
+        {{/each}}
+      </li>
+      {{/each}}
+     </ul>
+     
+            <p>mutual_friends</p>
+            <ul>{{#each mutual_friends}}
+                <li>({{id}}) {{name}}, {{gender}}, {{age}},</li>
+              {{/each}}
+            </ul>
+          </ol>
+          {{/each}}
+        </ul>
+      </li>
+     </ul>
+
+     <ul>
+      {{#each groups}}
+      <p><strong>Groups</strong></p>
+      <li>({{id}}) {{name}}</li>
+      <li>{{description}}</li>
+      <li>{{#each members}}
+        <ol>({{id}}), {{name}}, {{gender}}, {{age}},</ol>
+        {{/each}}
+      </li>
+      
+      {{/each}}
+     </ul>
+    
+    {{/each}}
+  </main>
+</div>
