@@ -107,14 +107,12 @@
     {{/with}}
 
     <div>
-        
-        <ul class="list-group-flush">
-        {{#each footer}}
-        <li class="list-group-item">
-         <a href="{{link}}" class="btn btn-link">{{text}}</a>
-        </li>
-         {{/each}}
-        </ul>
-    
+       <div class="list-group">
+          {{#each footer}}
+         <li class="list-group-item">
+          <a href="{{link}}" class="btn btn-link">{{text}}</a>
+         </li>
+          {{/each}}
+          </div> 
     </div>
 </main>
