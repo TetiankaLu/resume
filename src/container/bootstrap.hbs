@@ -1,310 +1,214 @@
 
-
-<main class="row gy-5">
-
-    <section class="col-6">
-<div class="card text-bg-dark">
+<main>
+    <div>
+        {{#with navigation}}
+        <div>
+           {{#each links }}
+          <a href="{{href}}">{{text}}</a>
+            {{/each}}
+                {{#with button}}
+                <a href="{{href}}" class="btn btn-primary btn-sm">{{text}}</a>
+                {{/with}}
+        </div>
+       {{/with}}
+    </div>
+    <hr>
+    <br>
+    <div>
+        {{#with header}}
+             <h1>{{title}}</h1>
+             <p>{{description}}</p>
+                {{#with button}}
+                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                {{/with}}
+            {{/with}}
+      
+    </div>
+    <br>
+    <hr>
+    <br>
+<div>
+    {{#with city}}
+    <h2>{{title}}</h2>
+    <div class="row g-2">
+        {{#each cards}}
+          <section class="col-5">
+            {{#with picture}}
+<div class="card">
     <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+    {{/with}}
   <div class="card-body">
-    <h5 class="card-title text-bg-primary">Title</h5>
-    <p class="text-bg-secondary">Hello</p>
-    <a href="/summery" class="btn btn-primary">Open</a>
+    <h5 class="card-title">{{title}}</h5>
+    <p>{{description}}</p>
+    {{#with button}}
+    <a href="{{href}}" class="btn btn-primary">{{text}}</a>
+    {{/with}}
   </div>
 </div>
 </section>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
 <br>
+<hr>
 <br>
+<div>
+    {{#with winner}}
+    <h2>{{title}}</h2>
+    {{#with table}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>surname</th>
+            <th>nickname</th>
 
-<div class="card">
-    
-  <div class="card-header">
-    <div>Menu</div>
-  </div>
-
-  <ul class="list-group-flush">
-    <li class="list-group-item">
-    <a href="#" class="btn btn-link">Home page</a>
-    </li>
-     <li class="list-group-item">
-     <a href="#" class="btn btn-link">Summery page</a>
-     </li>
-      <li class="list-group-item">
-     <a href="#" class="btn btn-link">Facebook page</a>
-     </li>
-
-</ul>
-
-<div class="card-footer">
-    <button class="btn btn-dark btn-sm">Update</button>
-</div>
-</div>
-
-<br>
-<br>
-<br>
-
-
-<div class="card text-bg-success">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each user}}
+            <tr>
+                <td>{{place}}</td>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{nickname}}</td>
+                
+            </tr>
+{{/each}}
+    </tbody>
+</table>
+    {{/with}}
+    {{/with}}
 </div>
 
-<br>
-<br>
-<br>
-
-<div class="row g-3">
-    <div class="col-4">
-        <div class="card text-bg-success ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
-
-<div class="col-4">
-        <div class="card text-bg-info ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
-
-<div class="col-4">
-        <div class="card text-bg-warning ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
- 
- <div class="col-4">
-        <div class="card text-bg-success ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
-
-<div class="col-4">
-        <div class="card text-bg-info ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
-
-<div class="col-4">
-        <div class="card text-bg-warning ">
-    <div class="card-header text-center">Header</div>
-    <div class="card-body text-center">
-        <h6 class="card-title">This is title</h6>
-        <p>This is content of our box</p>
-        <button class="btn btn-light">Click</button>
-    </div>
-    <div class="card-footer text-center">Footer</div>
-</div>
-    </div>
-</div>
-
-</main>
 <br>
 <hr>
 <br>
 
-<main>
-    <div class="row">
-        <div class="col=6">
-    <div class="nav nav-tabs">
-        <div class="nav-item">
-            <a href="#" class="nav-link active">Home page</a>
-        </div>
-        <div class="nav-item">
-            <a href="#" class="nav-link">Catalog</a>
-        </div>
+<div>
+    {{#with gallery}}
+    <h2>{{title}}</h2>
+    <div class="row g-3">
+        {{#each cards}}
+          <section class="col-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-header">{{name}}</h5>
+        <ul class="list-group-flush" >
+        <li class="list-group-item">{{items}}</li>
+    </ul>
 
-        <div class="nav-item">
-            <a href="#" class="nav-link disabled">Exit</a>
-        </div>
-
-        <div class="nav-item">
-            <a href="#" class="nav-link" >FAQ page</a>
-        </div>
-        
-
+  </div>
+</div>
+</section>
+        {{/each}}
     </div>
+    {{/with}}
+</div>
+<br>
+<hr>
+<br>
+<div>
+    {{#with relaxion}}
+    <p class="display-3">{{title}}</p>
+    <section class="row g-2">
+    {{#each cards}}
+    <section class="col-5">
+<div class="card text-bg-secondary">
+    <div class="card-header">{{header}}</div>
+    <div class="card-body">
+        <h6 class="card-title">{{title}}</h6>
+        <p>{{description}}</p>
     </div>
+</div>
+</section>
+{{/each}}
+    </section>
+{{/with}}
+</div>
+<br>
+<hr>
+<br>
+
+<div>
+    {{#with rest}}
+    <div class="row g-2">
+    {{#each cards}}
+    <section class="col-6">
+        <div class="card">
+    <div class="card-header text-center">{{header}}</div>
+    <div class="card-body text-center">
+        <h6 class="card-title">{{title}}</h6>
+        <p>{{description}}</p>
+        <button class="btn btn-light">{{button}}</button>
     </div>
-</main>
+    <div class="card-footer text-center">{{footer}}</div>
+</section>
+{{/each}}
+    </div>
+    {{/with}}
+    </div>
 
 
-<main>
-    <div class="row">
-        <div class="col-6">
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Home</a>
-            </li>
+    <br>
+<hr>
+<br>
+<div>
+    {{#with proposition}}
+    <p class="display-2">{{title}}</p>
+    <section class="row g-2">
+    {{#each card}}
+    <section class="col-5">
+<div class="card text-bg-warning">
+    <div class="card-header">{{header}}</div>
+    <div class="card-body">
+        <h6 class="card-title">{{title}}</h6>
+        <p>{{description}}</p>
+    </div>
+</div>
+</section>
+{{/each}}
+    </section>
+{{/with}}
+</div>
+<br>
+<hr>
+<br>
 
-            <li class="breadcrumb-item">
-                <a href="#">Doc</a>
-            </li>
+<div class="row g-3">
+        {{#with footer}}
+        <h5>{{title}}</h5>
+        <div class="col-3">
+        <ul class="list-group-flush">
+          {{#each navigation}}
+         <li class="list-group-item">
+          <p href="{{href}}">{{text}}</p>
+         </li>
+          {{/each}}
+          </div>
+         <div class="col-3">
+          {{#each socialMedia}}
+         <li class="list-group-item">
+          <p href="{{link}}" class="btn btn-dark btn-sm">{{name}}</p>
+         </li>
+          {{/each}}
+          </div>
+          <div class="col-3">
+          {{#each partners}}
+         <li class="list-group-item">
+          <p href="{{link}}" class="btn btn-info btn-sm">{{name}}</p>
+         </li>
+          {{/each}}
+          </div>
 
-            <li class="breadcrumb-item">
-                Work
-            </li>
+
         </ul>
-    </div>
-       <button class="btn btn-primary rounded-pull m-5">Click</button>
-    <div class="col-6">
-        <div class="card alert alert-dark">
-        <h6>Hello <span class="badge text-bg-success rouded-pull m-2">New</span></h6>
-<br>
-<br>
-       <div class="alert alert-primary">Важлива інформація</div>
-    </div>
-    </div>
-    </div>
+
+        
+       {{/with}}
+</div>
+
+
 </main>
-</main>
- 
- <main class="p-5">
-    <div class="row g-5">
-        <div class="col-12">
-        <div>
-            <label class="form-label">Email</label>
-            <div class="row">
-                <div class="col-3">
-                 <input class="form-control-lg">
-                </div>
-            </div>
-           
-            <div class="row">
-                <div class="col-3">
-                 <input class="form-control-sm">
-                </div>
-            </div>
-            
-            <div class="form-text text-danger">Error</div>
-
-        </div>
-        </div>
-
-        <div class="col-7">
-            <label class="form-label">Email</label>
-            <input class="form-control">
-            <div class="form-text text-danger">Error</div>
-        </div>
-
-        <div class="col-6">
-            <label class="form-label">Email</label>
-            <input class="form-control">
-            <div class="form-text text-danger">Error</div>
-        </div>
-        <br>
-        <hr>
-        <br>
-
-    </div>
-    <div class="col-12">
-        <div>
-            <label class="form-label">Select</label>
-            <div class="row">
-                <div class="col-5">
-                 <select class="form-select">
-                    <option selected>Open list</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                 </select>
-                </div>
-            </div>
-
-        </div>
-        </div>
-
-        <br>
-        <hr>
-        <br>
-
-        <div class="col-12">
-            <label class="form-label">Food</label>
-            <div class="form-check">
-                <label class="form-check-lable">Apple</label>
-                <input name="food" type="checkbox" class="form-check-input">
-            </div>
-            <div class="form-check">
-                <label class="form-check-lable">Cherry</label>
-                <input name="food" type="checkbox" class="form-check-input">
-            </div>
-            <div class="form-check">
-                <label class="form-check-lable">Mango</label>
-                <input name="food" type="checkbox" class="form-check-input">
-            </div>
-
-        </div>
-
-        <div class="col-12">
-            <label class="form-label">Food</label>
-            <div class="form-check">
-                <label class="form-check-lable">Apple</label>
-                <input name="food" type="radio" class="form-check-input">
-            </div>
-            <div class="form-check">
-                <label class="form-check-lable">Cherry</label>
-                <input name="food" type="radio" class="form-check-input">
-            </div>
-            <div class="form-check">
-                <label class="form-check-lable">Mango</label>
-                <input name="food" type="radio" class="form-check-input">
-            </div>
-
-        </div>
-
-         <div class="col-12">
-            <label class="form-label">Get bonus</label>
-            
-            <div class="form-check form-switch">
-                <label class="form-check-lable">Yes</label>
-                <input name="food" type="checkbox" class="form-check-input">
-            </div>
-            <div class="form-check form-switch">
-                <label class="form-check-lable">No</label>
-                <input name="food" type="checkbox" class="form-check-input">
-            </div>
-
-        </div>
-
-
-
- </main>
-
-
-
-
-
-
