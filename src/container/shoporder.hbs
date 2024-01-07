@@ -1,0 +1,137 @@
+<main class="p-5">
+ <div class="container">
+  <div class="row">
+    <div class="card-body">
+    <div class="col-12">
+      <h1>{{header}}</h1>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {{#each navigation.links}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{href}}">{{text}}</a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col-6">
+          <h2>{{contacts_data.title}}</h2>
+          <div class="btn-group">
+            {{#each contacts_data.buttons}}
+            <button type="button" class="btn btn-{{#if isPrimary}}primary{{/if}}{{#if isOutline}}outline-{{/if}}warning">{{text}}</button>
+            {{/each}}
+          </div>
+          
+          <form>
+            {{#each contacts_data.form.input}}
+            <div class="form-group">
+              <label for="{{@key}}">{{label}}</label>
+              <input type="text" class="form-control" id="{{@key}}" placeholder="{{placeholder}}">
+              <small class="form-text text-muted">{{caption}}</small>
+            </div>
+            {{/each}}
+            <hr>
+
+            {{#each contacts_data.form.switch}}
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="{{@index}}">
+              <label class="form-check-label" for="{{@index}}">{{text}}</label>
+            </div>
+            {{/each}}
+            <hr>
+          </form>
+        </div>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h2>{{total.title}}</h2>
+          <ul class="list-group">
+            {{#each total.item_list}}
+            <li class="list-group-item">{{name}} - {{price}}</li>
+            {{/each}}
+          </ul>
+          <ul class="list-group mt-2">
+            {{#each total.additional_info}}
+            <li class="list-group-item">{{text}}: {{value}}</li>
+            {{/each}}
+          </ul>
+          
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <p>{{total.total_price.text}}: {{total.total_price.value}}</p>
+            </div>
+          </div>
+
+          <div class="btn-group mt-2">
+            {{#each total.button}}
+            <button type="button" class="btn btn-{{#if isPrimary}}primary{{/if}}{{#if isOutline}}outline-{{/if}}secondary">{{text}}</button>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+        <div class="col-4">
+          <div class="card-mt-4">
+            <div class="card-body">
+              <div class="btn-group float-right">
+                {{#each action_block}}
+                <button type="button" class="btn btn-{{#if isSuccess}}success{{/if}}{{#if isDanger}}danger{{/if}}{{#if isInfo}}info{{/if}}">{{text}}</button>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="col-md-6 mt-4">
+      <h2>{{delivery.title}}</h2>
+      <form>
+        {{#each delivery.select}}
+        <div class="form-group">
+          <label for="{{@key}}">{{label}}</label>
+          <select class="form-control" id="{{@key}}">
+            <option value="" disabled selected>{{placeholder}}</option>
+            {{#each options}}
+            <option value="{{value}}">{{text}}</option>
+            {{/each}}
+          </select>
+        </div>
+        {{/each}}
+      </form>
+      <hr>
+      
+      <div class="form-check">
+        {{#each delivery.delivery_type}}
+        <input class="form-check-input" type="radio" name="deliveryType" id="{{@index}}">
+        <label class="form-check-label" for="{{@index}}">{{type}}</label><br>
+        {{/each}}
+      </div>
+      <hr>
+
+      <h3>{{delivery.payment.title}}</h3>
+      <ul class="list-group">
+        {{#each delivery.payment.list}}
+        <li class="list-group-item">
+          {{type}}
+          {{#if description}} - {{description}}{{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+
